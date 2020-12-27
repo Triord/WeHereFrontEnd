@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Liste des étudiants</h1>
+<table class="table table-responsive" >
+
+    <thead>
+    <tr>
+      <th scope="row">Nom et prénom</th>
+      <th scope="row">Date de naissance</th>
+      <th scope="row">Adresse</th>
+      <th scope="row">Numéro de téléphone</th>
+      <th scope="row">Classe</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr *ngFor="let stu of student" >
+      <ng-container *ngIf="stu.adresse" >
+      <td>{{stu?.nom}} {{stu?.prenom}}</td>
+      <td>{{stu.ddn|date:'EEEE dd/MM/yyyy'}}</td>
+      <td>{{stu.adresse}}</td>
+      <td>{{stu.numTel}}</td>
+      <td>{{stu.classe?.annee}} {{stu.classe?.nomSection}}</td>
+    </ng-container>
+    </tr>
+    </tbody>
+
+</table>
+</div>

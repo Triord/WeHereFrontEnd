@@ -1,0 +1,216 @@
+.form-group{
+  margin-top: 40px;
+}
+
+#inputClasse{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+
+}
+#inputHour{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 25px;
+
+}
+#infoUser{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: white;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+#statusPresence{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-bottom: 2px;
+
+}
+#statusSupp{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-bottom: 2px;
+}
+#inputClass{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+
+}
+#inputClas{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+}
+::placeholder{
+  color:rgb(0, 0, 0)!important;
+  text-align: center;
+}
+h1{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 25px!important;
+  border-radius: 25px;
+  color: rgb(172, 171, 171);
+  border-style: ridge;
+  border-color:  rgb(172, 171, 171);
+  border-top:  rgb(172, 171, 171)!important;
+  border-right:  rgb(172, 171, 171)!important;
+  border-left:  rgb(172, 171, 171)!important;
+  margin-bottom: 50px;
+}
+label{
+  font-weight: bold;
+}
+.btn-primary{
+  background-color: rgb(255, 255, 255)!important;
+  border-color:  black!important;
+  margin-left: 10px;
+  color: greenyellow!important;
+  outline-color: none!important;
+  box-shadow: none!important;
+  float: right;
+}
+.btn-primary:hover , .btn-primary:focus, .btn-primary:active , .btn-primary.active, .open>.dropdown-toggle.btn-primary{
+  background-color: rgb(110, 102, 93)!important;
+  border-color:  black!important;
+  margin-left: 10px;
+  color: greenyellow!important;
+  outline-color: none!important;
+  box-shadow: none!important;
+
+}
+.container{
+  margin-top: 15px;
+}
+th{
+  border: none!important;
+  text-align: center;
+}
+td{
+  border: none!important;
+}
+.table-responsive{
+  margin-top: 40px!important;
+  border-style: ridge;
+  margin: 0 auto;
+  width: 850px;
+  border-color: white!important;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: none!important;
+}
+#btnPresent{
+background-color: white;
+color: green;
+border-color: green;
+border-radius: 25px;
+margin-right: 5px;
+margin-bottom: 25px;
+
+}
+#btnAbsent{
+  background-color: white;
+  color: rgb(211, 33, 33);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color: rgb(211, 33, 33) ;
+
+}
+#btnAT{
+  background-color: white;
+  color: rgb(235, 142, 21);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color:rgb(235, 142, 21);
+}
+#btnDA{
+  background-color: white;
+  color: rgb(21, 24, 235);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color:rgb(21, 24, 235);
+  float: right;
+
+}
+#btnEntrerRaison{
+  background-color: rgb(62, 146, 23);
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color: rgb(15, 99, 8);
+  float: right;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+#btnPresent:hover , #btnPresent:focus,#btnPresent:active ,#btnPresent.active, .open>.dropdown-toggle#btnPresent{
+  background-color: green;
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color:rgb(255, 255, 255);
+}
+#btnAbsent:hover , #btnAbsent:focus,#btnAbsent:active ,#btnAbsent.active, .open>.dropdown-toggle#btnAbsent{
+  background-color: rgb(211, 33, 33);
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color:rgb(255, 255, 255);
+}
+#btnAT:hover , #btnAT:focus,#btnAT:active ,#btnAT.active, .open>.dropdown-toggle#btnAT{
+  background-color: rgb(235, 142, 21);
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color:rgb(255, 255, 255);
+}
+#btnDA:hover , #btnDA:focus,#btnDA:active ,#btnDA.active, .open>.dropdown-toggle#btnDA{
+  background-color: rgb(21, 24, 235);
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color:rgb(255, 255, 255);
+  float: right;
+}
+
+

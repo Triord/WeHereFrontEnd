@@ -1,0 +1,33 @@
+.container{
+  margin-top: 15px;
+}
+th{
+  border: none!important;
+  text-align: center;
+}
+td{
+  border: none!important;
+}
+.table-responsive{
+  margin-top: 40px!important;
+  border-style: ridge;
+  margin: 0 auto;
+  width: 800px;
+  border-color: black!important;
+  border-radius: 20px;
+  border-width: 1px;
+  border-top: none!important;
+}
+h1{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 25px!important;
+  border-radius: 25px;
+  color: rgb(172, 171, 171);
+  border-style: ridge;
+  border-color:  rgb(172, 171, 171);
+  border-top:  rgb(172, 171, 171)!important;
+  border-right:  rgb(172, 171, 171)!important;
+  border-left:  rgb(172, 171, 171)!important;
+}
+

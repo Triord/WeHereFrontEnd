@@ -1,0 +1,98 @@
+#dropdownForm1:hover, #dropdownForm1:focus, #dropdownForm1:active, #dropdownForm1.active, .open>.dropdown-toggle#dropdownForm1{
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  border-color: #279411;
+}
+#dropdownForm1{
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  margin-right: 1px;
+  margin-top: 10px;
+  background-color: white!important;
+  color: #279411
+}
+#posBttn:hover, #posBttn:focus, #posBttn:active, #posBttn.active, .open>.dropdown-toggle#posBttn{
+  color: white;
+  margin-top: 10px;
+  border-color: black; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  background-color: #F82456;
+  border-radius: 25px;
+  text-emphasis: center;
+}
+#posBttn{
+  margin-top: 10px;
+  border-color: #F82456; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  color: #F82456;
+  border-radius: 25px;
+  text-align: center;
+
+}
+input{
+  border-color: rgb(117, 79, 148);
+  border-radius: 10px;
+  outline: none!important;
+  box-shadow: none!important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: rgb(117, 79, 148)!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+.btn-primary {
+
+color:  rgb(117, 79, 148);
+border-color:  rgb(138, 101, 168);
+background-color: white!important;
+outline: none!important;
+box-shadow: none !important;
+width: 80px;
+
+}
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active, .open>.dropdown-toggle.btn-outline-success {
+  color: #fff;
+  background-color: rgb(29, 172, 29)!important;
+  border-color: black; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  margin-top: 10px;
+}
+.btn-outline-success{
+  margin-top: 10px;
+color:  green;
+border-color:  green;
+background-color: black!important;
+outline: none!important;
+box-shadow: none !important;
+}
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.active, .open>.dropdown-toggle.btn-outline-danger {
+  color: #fff;
+  background-color: red!important;
+  border-color: black; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+  margin-top: 10px;
+}
+.btn-outline-danger{
+  margin-top: 10px;
+color:  red;
+border-color:  red;
+background-color: black!important;
+outline: none!important;
+box-shadow: none !important;
+}
+#mainNavbar{
+  background-color: rgb(172, 172, 172)!important;
+}
+#nomApp{
+color: rgb(0, 0, 0)!important;
+}
+
+

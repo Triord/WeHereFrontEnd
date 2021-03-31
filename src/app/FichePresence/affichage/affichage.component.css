@@ -1,0 +1,115 @@
+#btnPresent{
+  background-color: white;
+  color: green;
+  border-color: green;
+  border-radius: 25px;
+  margin-right: 5px;
+  margin-bottom: 25px;
+  }
+
+#btnPresent:hover , #btnPresent:focus,#btnPresent:active ,#btnPresent.active, .open>.dropdown-toggle#btnPresent{
+  background-color: green;
+  color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin-right: 5px;
+  border-color:rgb(255, 255, 255);
+}
+label{
+  font-weight: bold;
+}
+#inputCour{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+}
+#inputHour{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 25px;
+
+}
+.form-group{
+  margin-top: 40px;
+}
+
+#inputClasse{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+
+}
+h1{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 25px!important;
+  border-radius: 25px;
+  color: rgb(172, 171, 171);
+  border-style: ridge;
+  border-color:  rgb(172, 171, 171);
+  border-top:  rgb(172, 171, 171)!important;
+  border-right:  rgb(172, 171, 171)!important;
+  border-left:  rgb(172, 171, 171)!important;
+  margin-bottom: 50px;
+}
+.container{
+  margin-top: 15px;
+}
+th{
+  border: none!important;
+  text-align: center;
+}
+td{
+  border: none!important;
+}
+.table-responsive{
+  margin-top: 40px!important;
+  border-style: ridge;
+  margin:  auto;
+  width: 50%;
+  border-color: white!important;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: none!important;
+}
+input{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: black;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+
+}
+#infoUser{
+  background-color: rgb(255, 255, 255)!important;;
+  border-radius: 20px;
+  border-color: white;
+  outline: none!important;
+  box-shadow: none!important;
+  color: rgb(10, 10, 10)!important;
+  max-width: 500px;
+  margin-bottom: 2px;
+  font-weight: bold;
+}

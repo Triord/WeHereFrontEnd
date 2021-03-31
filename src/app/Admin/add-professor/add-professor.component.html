@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>Ajouter un professeur</h1>
+
+  <form >
+
+
+    <div class="form-row" >
+  <div class="form-group col-md-4">
+    <label for="inputLundi"><strong>&nbsp;</strong></label>
+    <p> Nom</p>
+    <input type="text" [(ngModel)]="professor.nom" class="form-control" name="inputLundi" placeholder="test" >
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputLundi2">&nbsp;</label>
+    <p> Prénom </p>
+    <input type="text" [(ngModel)]="professor.prenom" class="form-control" name="inputLundi2" >
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputMardi"><strong>&nbsp;</strong></label>
+    <p> Date de naissance</p>
+    <input type="date" [(ngModel)]="professor.ddn" class="form-control" name="inputMardi">
+  </div>
+</div>
+
+<div class="form-row">
+
+  <div class="form-group col-md-4">
+    <label for="inputMardi2">&nbsp;</label>
+    <p> Adresse </p>
+    <input type="text" [(ngModel)]="professor.adresse" class="form-control" name="inputMardi2" >
+  </div>
+   <div class="form-group col-md-4">
+    <label for="inputMercredi"><strong>&nbsp;</strong></label>
+    <p> Numéro de téléphone </p>
+    <input type="text" [(ngModel)]="professor.numTel" class="form-control" name="inputMercredi" >
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputMercredi2">&nbsp;</label>
+    <p> Email</p>
+    <input type="email" [(ngModel)]="professor.email" class="form-control" name="inputMercredi2" >
+  </div>
+</div>
+
+
+
+
+
+
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <label for="inputJeudi"><strong>&nbsp;</strong></label>
+    <p> Mot de passe</p>
+    <input type="text" [(ngModel)]="professor.mdp" class="form-control" name="inputJeudi" >
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<button class="btn btn-primary" (click)="addEducator()">Cliquez pour ajouter</button>
+
+</form>
+
+  </div>

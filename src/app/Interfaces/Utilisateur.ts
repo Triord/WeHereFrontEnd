@@ -14,4 +14,6 @@ export class Utilisateur{
   presenceEleve: FichePresence;
   profDeLaFiche: FichePresence;
   classe: Classe;
+  email: string;
+  mdp: string;
 }

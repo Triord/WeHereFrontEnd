@@ -1,0 +1,51 @@
+h1{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 25px!important;
+  border-radius: 25px;
+  color: rgb(172, 171, 171);
+  border-style: ridge;
+  border-color:  rgb(172, 171, 171);
+  border-top:  rgb(172, 171, 171)!important;
+  border-right:  rgb(172, 171, 171)!important;
+  border-left:  rgb(172, 171, 171)!important;
+  margin-bottom: 50px;
+}
+input[type=text] {
+  border-color: #F82456;
+  border-radius: 10px;
+  outline: none!important;
+  box-shadow: none!important;
+}
+input[type=date] {
+  border-color: #F82456;
+  border-radius: 10px;
+  outline: none!important;
+  box-shadow: none!important;
+}
+input[type=email] {
+  border-color: #F82456;
+  border-radius: 10px;
+  outline: none!important;
+  box-shadow: none!important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color:#F82456!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+.btn-primary {
+color:  #F82456;
+float: right;
+margin-top: 28px;
+border-color:  #F82456!important;
+background-color: white;
+outline: none!important;
+box-shadow: none !important;
+}
+.form-row{
+  margin: 0 auto;
+  width: 60%;
+}

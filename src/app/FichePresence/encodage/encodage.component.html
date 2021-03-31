@@ -8,6 +8,15 @@
     <option *ngIf="cla.nomSection " >{{cla.annee}}{{cla.nomSection}}</option>
     </ng-container>
   </select>
+
+  <!-- Demander a  l'école la liste de tt les cours -->
+  <select id="inputCour" class="form-control" >
+    <option selected disabled>Entrez votre cours !</option>
+    <ng-container *ngFor="let cour of cours" >
+      <option *ngIf="cour.nomCours">{{cour.nomCours}}</option>
+    </ng-container>
+  </select>
+
   <select id="inputHour"  name="sel"  class="form-control " >
     <option selected disabled>Selectionnez l'heure a laquelle vous donnez cours</option>
     <option>08h30</option>
@@ -19,17 +28,18 @@
     <option>14h20</option>
     <option>15h20</option>
   </select>
-   <button id="btnPresent" class="btn btn-success" (click)="getAllStudent()">Valider</button>
+   <button id="btnPresent" class="btn btn-success" (click)="getAllStudent(); getFicheForVerif()">Valider</button>
 </form>
-
-
-<table class="table table-responsive" *ngIf="student" >
+<ng-container *ngIf="fiches.length > 0" >
+<h1  style="color: red; background-color: yellow;"> ATTENTION UNE FICHE A DEJA ETE FAITE POUR CE JOUR</h1>
+</ng-container>
+<table class="table table-responsive" *ngIf="fiches.length <= 0 && student" style="table-layout: fixed;">
 
   <thead>
     <tr>
       <th>Nom et prénom</th>
       <th>Présent/absent</th>
-      <th>Retard/départ anticipé</th>
+      <th style="text-align: center;">Retard/départ anticipé</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -58,7 +68,7 @@
 
           <select id="statusSupp" class="form-control" [(ngModel)]="student[i].presenceEleve.statusSupplementaire" *ngIf="student[i].presenceEleve.statusPresence === 'present'" >
             <option value="retard" >retard </option>
-            <option value="arrivée tardive">arrivée tardive </option>
+            <option value="départ anticipé">départ anticipé</option>
           </select>
 
 
@@ -66,14 +76,14 @@
       </td>
 
           <ng-container *ngIf="student[i].presenceEleve.statusPresence !== 'present' " >
-            <td>/////////////////////////////&nbsp;</td>
+            <td style="text-align: center;">/////////////////////////////&nbsp;</td>
           </ng-container>
 
       <td>
         <div class="col-md-2">
           <form class="form-inline">
-            <input id="inputClasse" type="text" placeholder="Entrez une raison" *ngIf="ifDA">
-            <button id="btnEntrerRaison" class="btn btn-success" (click)="onPresent(i)" >Valider</button>
+            <input id="inputClasse" type="text" placeholder="Entrez une raison" *ngIf="ifDA" >
+              <button id="btnEntrerRaison" class="btn btn-success" *ngIf="student[i].presenceEleve.statusPresence === 'present' || student[i].presenceEleve.statusPresence === 'absent' "  [disabled]="buttons[i]" (click)="onPresent(i);buttons[i]=true" >Valider</button>
           </form>
         </div>
       </td>
@@ -83,6 +93,7 @@
 </ng-container>
 </div>
 </table>
+
 
 
 

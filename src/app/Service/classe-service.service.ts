@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { API_URL } from '../app.constants';
 
@@ -19,5 +19,11 @@ export class ClasseServiceService {
   }
   getAllClasse(){
     return this.http.get(`${API_URL}getAllClasse`);
+  }
+  getClasseByParams(annee: any,nomSection: any){
+    const params = new HttpParams()
+    .set('annee', annee)
+    .set('nomSection',nomSection);
+    return this.http.get(`${API_URL}classeByParams`,{params});
   }
 }

@@ -1,0 +1,22 @@
+.jumbotron{
+  text-align: center;
+  background-color: rgb(255, 255, 255)!important;  height: 400px;
+  max-height: 400px;
+  background-size: cover;
+
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #F82456!important;
+  border-color: white; /*set the color you want here*/
+  outline: none!important;
+  box-shadow: none !important;
+}
+.btn-success {
+color: #F82456;
+border-color:  #F82456!important;
+background-color: rgb(255, 255, 255)!important;
+outline: none!important;
+box-shadow: none !important;
+}
+

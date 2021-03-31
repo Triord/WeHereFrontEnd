@@ -12,7 +12,7 @@
   max-width: 500px;
   margin-left: 5px;
   margin-bottom: 25px;
-
+  width: 100px;
 }
 #inputHour{
   background-color: rgb(255, 255, 255)!important;;
@@ -22,7 +22,7 @@
   box-shadow: none!important;
   color: rgb(10, 10, 10)!important;
   max-width: 500px;
-  margin-left: 5px;
+  margin-left: 50px;
   margin-right: 5px;
   margin-bottom: 25px;
 
@@ -46,6 +46,7 @@
   box-shadow: none!important;
   color: rgb(10, 10, 10)!important;
   max-width: 500px;
+  width: 100px;
   margin-bottom: 2px;
 
 }
@@ -70,7 +71,7 @@
   margin-left: 5px;
 
 }
-#inputClas{
+#inputCour{
   background-color: rgb(255, 255, 255)!important;;
   border-radius: 20px;
   border-color: black;
@@ -79,6 +80,7 @@
   color: rgb(10, 10, 10)!important;
   max-width: 500px;
   margin-left: 5px;
+  margin-bottom: 25px;
 }
 ::placeholder{
   color:rgb(0, 0, 0)!important;
@@ -123,7 +125,7 @@ label{
 }
 th{
   border: none!important;
-  text-align: center;
+
 }
 td{
   border: none!important;
@@ -132,20 +134,21 @@ td{
   margin-top: 40px!important;
   border-style: ridge;
   margin: 0 auto;
-  width: 850px;
-  border-color: white!important;
+  width: 650px;
   border-radius: 20px;
   border-width: 1px;
   border-style: none!important;
+
 }
+
 #btnPresent{
-background-color: white;
-color: green;
+color: white;
+background-color: green;
 border-color: green;
 border-radius: 25px;
 margin-right: 5px;
 margin-bottom: 25px;
-
+width: 100px;
 }
 #btnAbsent{
   background-color: white;
@@ -183,12 +186,18 @@ margin-bottom: 25px;
   margin-top: 3px;
   margin-left: 5px;
 }
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
 #btnPresent:hover , #btnPresent:focus,#btnPresent:active ,#btnPresent.active, .open>.dropdown-toggle#btnPresent{
-  background-color: green;
-  color: rgb(255, 255, 255);
+  color: green;
+  background-color: rgb(255, 255, 255);
   border-radius: 25px;
   margin-right: 5px;
-  border-color:rgb(255, 255, 255);
+  border-color:green;
 }
 #btnAbsent:hover , #btnAbsent:focus,#btnAbsent:active ,#btnAbsent.active, .open>.dropdown-toggle#btnAbsent{
   background-color: rgb(211, 33, 33);
@@ -212,5 +221,9 @@ margin-bottom: 25px;
   border-color:rgb(255, 255, 255);
   float: right;
 }
-
-
+@media only screen and (max-width: 760px), (min-width: 768px) and (max-width: 1024px) {
+  /* ... */
+  select {
+      width: 150px;
+  }
+}

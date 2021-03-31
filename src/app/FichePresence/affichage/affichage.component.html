@@ -1,1 +1,75 @@
-<p>affichage works!</p>
+<div class="container">
+  <h1>Fiche de Présence</h1>
+  <form class="form-inline" >
+    <label style="  margin-bottom: 25px;">Classe : </label>
+    <select id="inputClasse"  name="sel"  class="form-control " >
+      <option selected disabled>Selectionnez une classe</option>
+      <ng-container *ngFor="let cla of classe ">
+      <option *ngIf="cla.nomSection " >{{cla.annee}}{{cla.nomSection}}</option>
+      </ng-container>
+    </select>
+
+    <!-- Demander a  l'école la liste de tt les cours -->
+    <select id="inputCour" class="form-control" >
+      <option selected disabled>Selectionnez un cours !</option>
+      <ng-container *ngFor="let cour of cours" >
+        <option *ngIf="cour.nomCours">{{cour.nomCours}}</option>
+      </ng-container>
+    </select>
+
+    <select id="inputHour"  name="sel"  class="form-control " >
+      <option selected disabled>Selectionnez l'heure du cours</option>
+      <option>08h30</option>
+      <option>09h20</option>
+      <option>10h10</option>
+      <option>11h10</option>
+      <option>12h40</option>
+      <option>13h30</option>
+      <option>14h20</option>
+      <option>15h20</option>
+    </select>
+
+
+      <input id="dateF" type="date" placeholder="yyyy-MM-dd" name="ddn" class="form-control">
+
+
+
+     <button id="btnPresent" class="btn btn-success" (click)="getFFiche()">Valider</button>
+  </form>
+
+  <table class="table table-responsive" *ngIf="fiches.length > 0" >
+    <thead>
+      <tr>
+        <th>Nom et prenom</th>
+        <th>Present/Absent</th>
+        <th>Retard/Départ</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let f of fiches" >
+      <tr *ngIf="f.statusPresence" >
+        <td id="infoUser">
+            {{f.eleveFp.nom}} {{f.eleveFp.prenom}}
+        </td>
+        <td>
+          {{f.statusPresence}}
+        </td>
+        <td>
+          {{f.statusSupplementaire}}
+
+          <ng-container *ngIf="f.statusSupplementaire === null" >
+            ////////////////////
+          </ng-container>
+        </td>
+
+
+
+
+
+
+      </tr>
+    </tbody>
+
+  </table>
+
+  </div>

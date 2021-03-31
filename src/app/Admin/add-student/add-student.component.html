@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>Ajouter un étudiant</h1>
+
+  <form >
+
+
+    <div class="form-row" >
+  <div class="form-group col-md-4">
+    <label for="inputLundi"><strong>&nbsp;</strong></label>
+    <p> Nom</p>
+    <input type="text" [(ngModel)]="student.nom" class="form-control" name="inputLundi" placeholder="test" >
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputLundi2">&nbsp;</label>
+    <p> Prénom </p>
+    <input type="text" [(ngModel)]="student.prenom" class="form-control" name="inputLundi2" >
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputMardi"><strong>&nbsp;</strong></label>
+    <p> Date de naissance</p>
+    <input type="date" [(ngModel)]="student.ddn" class="form-control" name="inputMardi">
+  </div>
+</div>
+
+<div class="form-row">
+
+  <div class="form-group col-md-4">
+    <label for="inputMardi2">&nbsp;</label>
+    <p> Adresse </p>
+    <input type="text" [(ngModel)]="student.adresse" class="form-control" name="inputMardi2" >
+  </div>
+   <div class="form-group col-md-4">
+    <label for="inputMercredi"><strong>&nbsp;</strong></label>
+    <p> Numéro de téléphone </p>
+    <input type="text" [(ngModel)]="student.numTel" class="form-control" name="inputMercredi" >
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputMercredi2">&nbsp;</label>
+    <p> Email</p>
+    <input type="email" [(ngModel)]="student.email" class="form-control" name="inputMercredi2" >
+  </div>
+</div>
+
+
+
+
+
+
+<!--<div class="form-row">
+  <div class="form-group col-md-4">
+    <label for="inputJeudi"><strong>&nbsp;</strong></label>
+    <p> Mot de passe</p>
+    <input type="text" class="form-control" name="inputJeudi" >
+  </div>
+</div>-->
+
+
+
+
+
+
+
+
+<button class="btn btn-primary" (click)="addStudent()">Cliquez pour ajouter</button>
+
+</form>
+
+  </div>

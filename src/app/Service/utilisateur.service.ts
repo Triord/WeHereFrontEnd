@@ -29,5 +29,33 @@ export class UtilisateurService {
   testAddFiche(fp){
     return this.http.post(`${API_URL}testAddFiche`,fp);
   }
-
+  AddStudent(student){
+    return this.http.post(`${API_URL}addStudent`,student);
+  }
+  AddProfessor(professor){
+    return this.http.post(`${API_URL}addProfessor`,professor);
+  }
+  AddEducator(educator){
+    return this.http.post(`${API_URL}addEducator`,educator);
+  }
+  getOneFiche(id:any){
+    return this.http.get(`${API_URL}ficheById/${id}`);
+  }
+  getFicheByParams(heureCours: any , annee: any , nomSection: any , nomCours : any, dateJourPresence : any){
+    const params = new HttpParams()
+    .set('heureCours', heureCours)
+    .set('annee', annee)
+    .set('nomSection',nomSection)
+    .set('nomCours', nomCours)
+    .set('dateJourPresence', dateJourPresence);
+    return this.http.get(`${API_URL}ficheByParams`,{params});
+  }
+  getFicheForVerif(heureCours: any , annee: any , nomSection: any , nomCours : any){
+    const params = new HttpParams()
+    .set('heureCours', heureCours)
+    .set('annee', annee)
+    .set('nomSection',nomSection)
+    .set('nomCours', nomCours);
+    return this.http.get(`${API_URL}ficheForVerif`,{params});
+  }
 }

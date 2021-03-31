@@ -23,6 +23,12 @@ registerLocaleData(localeFr);
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { LoginComponent } from './login/login.component';
+import { HttpInterceptorAuthService } from './Service/httpInterceptorAuth.service';
+import { PanelComponent } from './Admin/panel/panel.component';
+import { AddStudentComponent } from './Admin/add-student/add-student.component';
+import { AddProfessorComponent } from './Admin/add-professor/add-professor.component';
+import { AddEducatorComponent } from './Admin/add-educator/add-educator.component';
 
 
 
@@ -33,7 +39,12 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     EncodageComponent,
     ModificationComponent,
     ListeEmployeComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent,
+    PanelComponent,
+    AddStudentComponent,
+    AddProfessorComponent,
+    AddEducatorComponent
     ],
   imports: [
     BrowserModule,
@@ -50,8 +61,13 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     ClasseServiceService,
     CourServiceService,
     UtilisateurService,
+    LoginComponent,
     DatePipe,
-    { provide: LOCALE_ID, useValue: 'fr-FR'}
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+    { provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorAuthService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,12 @@
+import { CourServiceService } from './../../Service/cour-service.service';
 import { FichePresence } from './../../Interfaces/FichePresence';
 import { ClasseServiceService } from './../../Service/classe-service.service';
 import { UtilisateurService } from './../../Service/utilisateur.service';
 import { Component, OnInit } from '@angular/core';
 import { Classe } from 'src/app/Interfaces/Classe';
 import { Utilisateur } from 'src/app/Interfaces/Utilisateur';
+import { Cours } from 'src/app/Interfaces/Cours';
+import * as moment from 'moment';
 
 
 @Component({
@@ -13,15 +16,23 @@ import { Utilisateur } from 'src/app/Interfaces/Utilisateur';
 })
 export class EncodageComponent implements OnInit {
   classe: Classe[];
+  buttons = Array(30).fill(false);
+  cours: Cours[];
+  classeSelec: Classe = new Classe();
   student: Utilisateur[];
   oneStudent: Utilisateur;
   cl:Classe[];
+  fiches: FichePresence[] = [];
   fp: FichePresence = new FichePresence();
   ifDA: boolean;
-  constructor(private userS: UtilisateurService, private classeS: ClasseServiceService) { }
+  dateVerif: Date = new Date();
+  cour: Cours = new Cours();
+  constructor(private userS: UtilisateurService, private classeS: ClasseServiceService,
+    private courS: CourServiceService) { }
 
   ngOnInit(){
     this.getAllClasse();
+    this.getAllCours();
   }
   getAllStudent(){
     const inputEl: HTMLInputElement = document.getElementById('inputClasse') as HTMLInputElement;
@@ -56,47 +67,145 @@ export class EncodageComponent implements OnInit {
     })
   }
   onPresent(index: number){
-    console.log(this.student)
-    console.log(index)
+    // console.log(this.student)
+    // console.log(index)
     this.oneStudent = this.student[index];
-    console.log(this.oneStudent)
+    // console.log(this.oneStudent)
     const inputEl: HTMLInputElement = document.getElementById('inputClasse') as HTMLInputElement;
     const classe: string = inputEl.value;
     const inputEl2: HTMLInputElement = document.getElementById('inputHour') as HTMLInputElement;
     const hour: string = inputEl2.value;
-    console.log('la classe selec est',classe,' l heure de cours est ',hour)
+    const inputEl3: HTMLInputElement = document.getElementById('inputCour') as HTMLInputElement;
+    const cour: string = inputEl3.value;
+   // console.log('la classe selec est',classe,'le cours est', cour,' l heure de cours est ',hour)
+    const annee = classe.slice(0,1);
+    const nomSection = classe.slice(1,6);
+    this.classeS.getClasseByParams(annee,nomSection).subscribe((dataClasse: any) => {
 
-    /*_____________TACHE A FAIRE POUR LE 23/12/2020_________________
-    Maintenant que j'ai l utilisateur appartenant a la ligne du bouton
-    je peux l assigner a  fp , il me reste a configurer fp , a get la value
-    de l'heure de cours et a post tt ca dans spring, il faudra aussi une fois
-    que la connexions est implémentzr dire dans la méthode du back end
-    que l'utilisateur connecté est le profdelafiche
-    */
-  }
-  onAbsent(){
+      this.courS.getCourByParam(cour).subscribe((dataCourGet: any) => {
+        this.cour = dataCourGet;
+
+
+
+
+    this.classeSelec = dataClasse;
+    const postData = new FichePresence();
+    postData.idFichePresence = this.fp.idFichePresence;
+    postData.statusPresence = this.oneStudent.presenceEleve.statusPresence;
+    postData.statusSupplementaire = this.oneStudent.presenceEleve.statusSupplementaire;
+    postData.dateJourPresence = null;
+    postData.heureCours = hour;
+    postData.raison = this.fp.raison; //{SERA FAIS PLUS TARD} encore a set dans le front => fichePresence => encodage => html
+
+    postData.eleveFp ={
+      idUtilisateur : this.oneStudent.idUtilisateur,
+      nom : this.oneStudent.nom,
+      prenom : this.oneStudent.prenom,
+      ddn : this.oneStudent.ddn,
+      adresse : this.oneStudent.adresse ,
+      numTel : this.oneStudent.numTel,
+      coursRecu : null,
+      coursDonner : null,
+      presenceEleve : null,
+      profDeLaFiche : null,
+      classe : null,
+      email: this.oneStudent.email,
+      mdp: this.oneStudent.mdp
+    };
+
+    postData.professeurFp = null; // encore a set dans le backend => service => FichePresence(sera le user logged)
+
+    postData.classeFp = {
+      idClasse : this.classeSelec.idClasse,
+      annee : this.classeSelec.annee,
+      nomSection : this.classeSelec.nomSection,
+      eleveClasse : null
+    };
+
+
+    postData.coursFp = {
+      idCours : this.cour.idCours,
+      nomCours : this.cour.nomCours,
+      coursDeLaFiche : null,
+      classeDeLaFiche : null,
+      eleve : null,
+      professeur : null,
+      classe : null
+    };
+
+
+    console.log(postData)
+    this.userS.testAddFiche(postData).subscribe((dataPost: any) => {
+      console.log(dataPost)
+    })
+
+  })
+    })
+
+
 
   }
-  onAT(){
+  getAllCours(){
+    this.courS.getAllCours().subscribe((dataCours: any) => {
+      console.log(dataCours)
+      this.cours = dataCours;
+      this.cours.forEach(cour => {
+        if (typeof cour === 'number') {
+          this.courS.getOneCour(cour).subscribe((dataCour: any) => {
+            this.cours.push(dataCour);
+          })
+
+        }
+      });
+      console.log(this.cours)
+    })
+
 
   }
-  onDA(){
-    this.ifDA = true;
-    console.log(this.fp);
+  getFicheForVerif(){
+    const inputEl: HTMLInputElement = document.getElementById('inputClasse') as HTMLInputElement;
+    const classe: string = inputEl.value;
+    const inputEl2: HTMLInputElement = document.getElementById('inputHour') as HTMLInputElement;
+    const hour: string = inputEl2.value;
+    const inputEl3: HTMLInputElement = document.getElementById('inputCour') as HTMLInputElement;
+    const cour: string = inputEl3.value;
+   // console.log('la classe selec est',classe,'le cours est', cour,' l heure de cours est ',hour)
+    const annee = classe.slice(0,1);
+    const nomSection = classe.slice(1,6);
+    const d = new Date();
+    const dateJourPresence  = moment(d).format('YYYY-MM-DD') as unknown as Date;;
+
+    this.userS.getFicheByParams(hour, annee, nomSection, cour, dateJourPresence).subscribe((dataFiche: any) => {
+
+      this.fiches = dataFiche;
+
+      this.fiches.forEach(f => {
+        if (typeof f === 'number') {
+          this.userS.getOneFiche(f).subscribe((dataOneFiche: any) =>{
+            this.fiches.push(dataOneFiche);
+          })
+        }
+      });
+      console.log(this.fiches)
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
-  trackByIdx(index: number, obj: any): any {
-    return index;
-  }
-  trackById(index: number, obj: any): any {
-    return index;
-  }
-  selectOption(name: string,name2: string) {
-    console.log('name1 is',name,'name2 is', name2);
-    /*const f : FichePresence = new FichePresence();
-    f.idFichePresence = this.fp.idFichePresence;
-    f.statusPresence = name;
-    f.statusSupplementaire = name;
-    this.userS.testAddFiche*/
-  }
+
+
+
 
 }

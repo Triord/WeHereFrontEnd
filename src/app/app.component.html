@@ -21,24 +21,26 @@
     >
       <!-- right nav menus -->
       <ul class="navbar-nav ml-auto">
-        <li routerLinkActive="active" class="nav-item">
+        <li routerLinkActive="active" class="nav-item"  *ngIf="authenticated">
           <a id="posBttn"  class="nav-link"> Accueil</a>
         </li>
 
         <li routerLinkActive="active" class="nav-item">
-          <a id="posBttn" class="nav-link"  routerLink="/student/listeStudent" > Liste d'élève </a>
+          <a id="posBttn" class="nav-link"  routerLink="/student/listeStudent"  *ngIf="authenticated && role === 'educateur'|| role === 'admin'"> Liste d'élève </a>
         </li>
 
         <li routerLinkActive="active" class="nav-item">
-          <a id="posBttn"  class="nav-link"  routerLink="/fichePresence/menu" >Fiche de présence </a>
+          <a id="posBttn"  class="nav-link"  routerLink="/fichePresence/menu"  *ngIf="authenticated && role !== 'etudiant'">Fiche de présence </a>
         </li>
 
         <li routerLinkActive="active" class="nav-item">
-          <a id="posBttn"  class="nav-link"  >Connexions</a>
+          <a id="posBttn"  class="nav-link"  routerLink="/admin/panel" *ngIf="authenticated && role === 'admin'" >Panel admin </a>
         </li>
 
         <li routerLinkActive="active" class="nav-item">
-          <a id="posBttn"  class="nav-link"  >Déconnexions</a>
+          <a  id="posBttn" class="nav-link" routerLink="/login" *ngIf="!authenticated"  >Authentification</a>
+
+          <a id="posBttn" class="nav-link" *ngIf="authenticated" (click)="logout()" style="cursor: pointer;">Se deconnecter de {{username}}</a>
         </li>
 
 
